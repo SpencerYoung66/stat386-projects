@@ -21,7 +21,7 @@
 title: Data Science Explanations, Tips, and Tricks # Make a title for your blog
 email: youngs3@byu.edu # Add your email 
 description: >- # this means to ignore newlines until "baseurl:"
- Change the description so that it describes your blog
+ Blog for the beginner Data Scientist that offers Tips and Tricks for your analyses!
 baseurl: "/stat386-projects" # keep this the same or change it to the name of the repository 
 url: "https://SpencerYoung66.github.io" #  change this to "https://<your-github-username>.github.io"
 image: "assets/images/image5.jpg"
