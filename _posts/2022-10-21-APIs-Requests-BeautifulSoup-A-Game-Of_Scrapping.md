@@ -78,6 +78,13 @@ From the number of total reviews, it is possible to estimate the number of units
 
 Finally, after all of the different scraping techniques employed, I have my dataset. While I did not realize this when starting, this project would be important to help preserve some of the information about these games that has now been lost. In a future blog post I will be analyzing this data to see how Unity vs. Unreal compare. If you are interested in seeing the code used for this post, or the data created, check out my GitHub repository [here](https://github.com/SpencerYoung66/UnityUnrealSteamData).
 
+# Ethics: Acceptable Usage
+
+To ensure that scraping Wikipedia would be acceptable, I read the [robots.txt page](https://en.wikipedia.org/robots.txt). The page referenced many different crawlers that it would not allow, but said “Friendly, low-speed bots are welcome viewing article pages, but not dynamically-generated pages please.” Since the pages I referenced are not dynamically-generated, as long as I kept my speed relatively slow, I would be fine scraping the page.
+
+Next, I needed to check Steam’s API requirements. On their [website](https://steamcommunity.com/dev/apiterms#:~:text=You%20are%20limited%20to%20one,these%20API%20Terms%20of%20Use), they say, “You are limited to one hundred thousand (100,000) calls to the Steam Web API per day.” Since my data only has about 800 rows, and I am waiting two seconds between API calls, I appear to be okay using the Steam API.
+
+
 
 #### Title Photo
 Photo by Sigmund on Unsplash
