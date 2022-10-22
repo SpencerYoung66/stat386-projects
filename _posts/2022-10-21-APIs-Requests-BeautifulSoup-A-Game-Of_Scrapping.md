@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "APIs, Requests, and Beautiful Soup: A Game of Scrapping"
+title:  "APIs, Requests, and Beautiful Soup: A Game of Scraping"
 date:   2022-10-21
 author: Spencer Young
 description: My experience using Steam’s API, Requests, and Beautiful Soup to gather data to compare games made in Unity game engine vs. Unreal engine.
-image: /assets/images/TutorialPhotos/CodePhoto.png
+image: /assets/images/ScrappingPhotos/GameOver.png
 ---
 
 # The Game Begins
@@ -20,37 +20,37 @@ For the list of Unity games, I went to the following [link](https://en.wikipedia
 I sent a request to the website with the requests library. This enabled me to get all of the html. I then converted the html to a Beautiful Soup object. 
 Converting the html to a Beautiful Soup object is preferred because Beautiful Soup (referred to hereafter as BS) has many methods that allow you to search through the html for the information you want. 
 
-After looking at the html, I noticed that the titles for the games all were contained in unordered list elements. This is something that you will want to do when scrapping. By right-clicking the text, you can click “inspect” and see in the html what type of element you desired data is. 
+After looking at the html, I noticed that the titles for the games all were contained in unordered list elements. This is something that you will want to do when scraping. By right-clicking the text in the webpage, you can click “inspect” and see in the html what type of element your desired data is. 
 
 ![Figure](https://github.com/SpencerYoung66/stat386-projects/raw/main/assets/images/ScrappingPhotos/UnorderedLists.png)
 
-Within the lists, the actual titles of the games were within “a” elements. Every website has a different format, to use the model I used to apply to your own data. The structure may be different, but the principles are the same. Get as unique of elements as possible that describe all of your data, then keep getting more and more descriptive until you can access the data. 
+Within the lists, the actual titles of the games were within “a” elements. Every website has a different format, so you can use the model I used, but you will need to apply it to your own webpage. The structure may be different, but the principles are the same. Get as unique of web elements as possible that describe all of your data, then keep getting more and more descriptive until you can access the data. 
 
 ![Figure](https://github.com/SpencerYoung66/stat386-projects/raw/main/assets/images/ScrappingPhotos/AElements.png)
 
 # Steam Game
 
-Getting the Steam games was a different process entirely. Steam has a very nice API that is open to use. The documentation for the API can be found [here](https://partner.steamgames.com/doc/home). The easiest way to get a list of games from Steam, is to get a list of all of the apps available on Steam. 
+Getting the Steam games was a different process entirely. Steam has a very nice API that is open to use. The documentation for the API can be found [here](https://partner.steamgames.com/doc/home). The easiest way to get a list of games from Steam is to get a list of all of the apps available on Steam. 
 
 ![Figure](https://github.com/SpencerYoung66/stat386-projects/raw/main/assets/images/ScrappingPhotos/GetAllSteam.png)
 
 While this may not be ideal, given the options available, this is the easiest route. This [link](https://stackoverflow.com/questions/46330864/steam-api-all-games) talks more about why, as well as gives the endpoint needed to get all of the games. 
 
-With this giant list of games, I needed to filter it down. An important step is to convert the response to a json file. In Python, this will show up as a dictionary. For me, this was a triple-nested dictionary. 
+With this giant list of games, I needed to filter it down. An important step is to convert the response to a json file. In Python, this will show up as a dictionary. For me, this was a triple-nested dictionary/list. 
 
-Part of the data cleaning process involves making the data, even data from APIs, usable. For me, I ended looping through the outer dictionary and list so I could convert the inner lists to dictionaries for later use. I also made a list of the Steam games and a list of AppIDs  for later comparison use. 
+Part of the data cleaning process involves making the data, even data from APIs, usable. For me, I ended up looping through the outer dictionary and list so I could convert the inner lists to dictionaries for later use. I also made a list of the Steam games and a list of AppIDs (unique game identifiers for Steam) for later comparison use. 
 
 # Unreal Engine
 
-Next, for the last scrape, I scrapped Wikipedia again for a list of Unreal Engine games from the following [link](https://en.wikipedia.org/wiki/List_of_Unreal_Engine_games). Unfortunately, this page has also been deleted. Fortunately, however, after my first successful scrape, I saved all of my data to a CSV for later use. 
+Next, for the last scrape, I scraped Wikipedia again for a list of Unreal Engine games from the following [link](https://en.wikipedia.org/wiki/List_of_Unreal_Engine_games). Unfortunately, this page has also been deleted. Fortunately, however, after my first successful scrape, I saved all of my data to a CSV for later use. 
 
-This is an example of different webpages of the same website being different. The games in this list were stored as tables, instead of unordered lists. This was actually a benefit to me, because it is easier to just get tables with pandas than to use requests and BS.
+This is an example of different webpages from the same website being different. The games in this list were stored as tables, instead of unordered lists. This was actually a benefit to me, because it is easier to just get tables with pandas than to use requests and BS.
 
 ![Figure](https://github.com/SpencerYoung66/stat386-projects/raw/main/assets/images/ScrappingPhotos/ReadHTML.png)
 
 The tables were stored as a list of DataFrames. So, I looped through this list and combined all the DataFrames.
 
-I then proceeded to filter my complete DataFrame in the following ways: to , , and . 
+I then proceeded to filter my complete DataFrame in the following ways:
 
 1.	Erase Missing Platforms 
 2.	Only Get PC Games
@@ -76,7 +76,7 @@ From the number of total reviews, it is possible to estimate the number of units
 
 # The Game Ends
 
-Finally, after all of the different scrapping techniques employed, I have my dataset. While I did not realize when starting, this project would be important to help preserve some of the information about these games that has now been lost. In a future blog post I will be analyzing this data to see how Unity vs. Unreal compare. If you are interested in seeing the code used for this post, or the data created, check out my GitHub repository [here](https://github.com/SpencerYoung66/UnityUnrealSteamData).
+Finally, after all of the different scraping techniques employed, I have my dataset. While I did not realize this when starting, this project would be important to help preserve some of the information about these games that has now been lost. In a future blog post I will be analyzing this data to see how Unity vs. Unreal compare. If you are interested in seeing the code used for this post, or the data created, check out my GitHub repository [here](https://github.com/SpencerYoung66/UnityUnrealSteamData).
 
 
 #### Title Photo
