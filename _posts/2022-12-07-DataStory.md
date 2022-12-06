@@ -4,14 +4,15 @@ title:  "\"Choose Your Fighter\": Analysis of Reviews Between Unity and Unreal E
 date:   2022-12-05
 author: Spencer Young
 description: Final Analysis of Games made in Unity vs. Unreal
-image: /assets/images/ScrappingPhotos/GameOver.png
+image: /assets/images/DataStory/Controller.png
 ---
 
 # Meet the Fighters
 
 One of the biggest media industries in the current day and age is that of video games. While most gamers have only been able to play games, engines to develop games have become increasingly available. With these engines available, many gamers who want to turn their hobby into a career suddenly have the means to. However, the question becomes where to start, specifically which engine to develop with. While there are many more than just these, the engines I will focus on in this blog post are Unity and Unreal. While both engines are used for all kinds of games, a quick Google search shows that the most popular games in Unity tend to be Indie titles, while the most popular games made in Unreal tend to be AAA games.  
 
-Over the course of the past few blog posts, I have collected and done exploratory analysis on data related to video games made in these engines. I started with finding Wikipedia pages that contain lists of games made in Unity and Unreal. Unfortunately, those lists are both gone now. Then, I used the Steam API to get the information related to those games. After some data cleaning and additional gathering, I performed an exploratory data analysis. To me, the most meaningful metrics available are which engine was used (obviously), how much the game costs, and the number of positive vs. negative reviews/total reviews. 
+Over the course of the past few blog posts, I have collected and done exploratory analysis on data related to video games made in these engines. I started with finding Wikipedia pages that contain lists of games made in Unity and Unreal. Unfortunately, those lists are both gone now. Then, I used the Steam API to get the information related to those games. After some data cleaning and additional gathering, I performed an exploratory data analysis. To me, the most meaningful metrics available are which engine was used (obviously), how much the game costs, and the number of positive vs. negative reviews. 
+
 
 # Comparing Games by Engine, Price, and Reviews
 
@@ -27,7 +28,8 @@ If you are interested in checking out this data for yourself, or seeing the code
 
 
 #### Title Photo
-Photo by Sigmund on Unsplash
+Photo by Igor Karimov on Unsplash
+  
   
 
 
