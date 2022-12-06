@@ -4,7 +4,7 @@ title:  "\"Choose Your Fighter\": Analysis of Reviews Between Unity and Unreal E
 date:   2022-12-05
 author: Spencer Young
 description: Final Analysis of Games made in Unity vs. Unreal
-image: /assets/images/DataStory/Controller.png
+image: /assets/images/DataStory/Controller.jpeg
 ---
 
 # Meet the Fighters
